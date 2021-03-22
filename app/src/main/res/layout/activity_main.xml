@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
     <!--Background image -->
     <ImageView
         android:layout_width="wrap_content"
@@ -27,7 +23,17 @@
         android:layout_marginTop="35dp"
         android:text="Local league."
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="36sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/findRestaurantsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/purple_700"
+        android:text="Find team"
+        android:textColor="@color/white" />
 
 </RelativeLayout>
