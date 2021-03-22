@@ -46,6 +46,6 @@
         android:ems="10"
         android:hint="Team name"
         android:inputType="textPersonName"
-        android:text="Name" />
+         />
 
 </RelativeLayout>
