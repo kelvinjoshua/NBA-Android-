@@ -14,6 +14,7 @@ public class Teams extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
+        showText = (TextView) findViewById(R.id.intentTextView);
         Intent intent = getIntent();
         Retrieved = intent.getStringExtra("Team");
         //we get text and set it to the display value//

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //test whether a toast will appear on submit
-                Intent intent =new Intent(MainActivity.this,Teams.class);
+                Intent intent = new Intent(MainActivity.this,Teams.class);
                 String teamName = mTeamEdit.getText().toString();
                 intent.putExtra("Team",teamName);
                 startActivity(intent);
