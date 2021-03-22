@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent =new Intent(MainActivity.this,Teams.class);
                 String teamName = mTeamEdit.getText().toString();
                 intent.putExtra("Team",teamName);
+                startActivity(intent);
                // Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();
             }
         });
