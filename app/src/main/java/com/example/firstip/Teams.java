@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class Teams extends AppCompatActivity {
     private String Retrieved;
@@ -13,6 +14,5 @@ public class Teams extends AppCompatActivity {
         setContentView(R.layout.activity_teams);
         Intent intent = getIntent();
         Retrieved = intent.getStringExtra("Team");
-
     }
 }
