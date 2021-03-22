@@ -8,13 +8,13 @@ import androidx.annotation.Nullable;
 public class Adapter extends ArrayAdapter {
     private Context mContext;
     private String[] mTeams;
-    private String[] mPlayers;
+    private String[] mseed;
     //resource here is our layout
-    public Adapter(Context mContext,int resource,String[] mTeams,String[] mPlayers){
+    public Adapter(Context mContext,int resource,String[] mTeams,String[] mSeed){
             //as subClass,access to overriden methods and private properties
         super(mContext,resource);
         this.mContext =mContext;
-        this.mPlayers =mPlayers;
+        this.mseed =mseed;
         this.mTeams =mTeams;
     }
 
@@ -27,8 +27,8 @@ public class Adapter extends ArrayAdapter {
     @Override
     public Object getItem(int position) {
         String singleTeam = mTeams[position];
-        String players = mPlayers[position];
+        String record = mseed[position];
         //format specifiers for strings %s
-        return String.format("%s has % players", singleTeam,players);
+        return String.format("%s'/s current seed is% players", singleTeam,record);
     }
 }

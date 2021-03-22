@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:hint="Team name"
+        android:hint=" Input NBA"
         android:inputType="textPersonName"
         android:visibility="visible" />
 
