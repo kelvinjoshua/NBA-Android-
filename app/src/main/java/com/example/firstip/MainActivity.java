@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 //test whether a toast will appear on submit
                 Intent intent =new Intent(MainActivity.this,Teams.class);
                 String teamName = mTeamEdit.getText().toString();
+                intent.putExtra("Team",teamName);
                // Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();
             }
         });
