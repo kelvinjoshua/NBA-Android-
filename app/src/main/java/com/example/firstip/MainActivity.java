@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //test whether a toast will appear on submit
                 Intent intent =new Intent(MainActivity.this,Teams.class);
+                String teamName = mTeamEdit.getText().toString();
                // Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();
             }
         });
