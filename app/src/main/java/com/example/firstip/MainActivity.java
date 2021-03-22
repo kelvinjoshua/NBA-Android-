@@ -13,10 +13,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.findTeamButton)
-    private Button mTeamBut;
-    @BindView(R.id.editTextTextPersonName)
-    private EditText mTeamEdit;
+    @BindView(R.id.findTeamButton) Button mTeamBut;
+
+    @BindView(R.id.editTextTextPersonName) EditText mTeamEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

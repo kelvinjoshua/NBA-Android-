@@ -15,12 +15,9 @@ import butterknife.ButterKnife;
 
 public class Teams extends AppCompatActivity {
     //EASTERN CONFERENCE
-    @BindView(R.id.intentTextView)
-    private String Retrieved;
-    private TextView showText;
+    @BindView(R.id.intentTextView) TextView showText;
+    @BindView(R.id.listView) ListView mlist;
 
-    @BindView(R.id.listView)
-    private ListView mlist;
     private  String[] mteams = new String []{"Lakers","Spurs","Rockets","Golden State","Phoenix-suns","Utah-Jazz",
     "Clippers","Nuggets","Portland-Blazers","Spurs","Mavericks"};
     private String [] mSeed = new String[]{"28-15","22-17","11-30","22-21","28-13","30-11","27-16","25-17","22-17","22-19"};
@@ -44,7 +41,7 @@ public class Teams extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        Retrieved = intent.getStringExtra("Team");
+        String Retrieved = intent.getStringExtra("Team");
         //we get text and set it to the display value//
         showText.setText("Here are the Standings for " + " " +Retrieved + " "+"Western-Conference");
     }
