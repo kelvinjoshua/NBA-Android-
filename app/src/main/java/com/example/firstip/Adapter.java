@@ -6,11 +6,12 @@ import android.widget.ArrayAdapter;
 import androidx.annotation.Nullable;
 
 public class Adapter extends ArrayAdapter {
+
     private Context mContext;
     private String[] mTeams;
     private String[] mseed;
     //resource here is our layout
-    public Adapter(Context mContext,int resource,String[] mTeams,String[] mSeed){
+    public Adapter(Context mContext,int resource,String[] mTeams,String[] mseed){
             //as subClass,access to overriden methods and private properties
         super(mContext,resource);
         this.mContext =mContext;
@@ -23,12 +24,11 @@ public class Adapter extends ArrayAdapter {
         return mTeams.length;
     }
 
-    @Nullable
     @Override
     public Object getItem(int position) {
         String singleTeam = mTeams[position];
         String record = mseed[position];
         //format specifiers for strings %s
-        return String.format("%s'/s current seed is% players", singleTeam,record);
+        return String.format("%s '/s current seed is% players", singleTeam,record);
     }
 }

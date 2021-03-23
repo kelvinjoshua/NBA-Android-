@@ -23,7 +23,7 @@
         android:layout_marginTop="35dp"
         android:text="Local league."
         android:textColor="@color/black"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
@@ -33,8 +33,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@color/purple_700"
-        android:text="Find team"
+        android:text="Find teams"
         android:textColor="@color/white" />
+
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -47,5 +48,6 @@
         android:hint=" Input NBA"
         android:inputType="textPersonName"
         android:visibility="visible" />
+
 
 </RelativeLayout>
