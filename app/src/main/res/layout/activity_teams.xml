@@ -5,18 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Teams">
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/intentTextView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
     <ListView
+        android:id="@+id/listItems"
+        style="@style/Widget.AppCompat.ListView.DropDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listItems"
-        android:layout_above="@+id/intentTextView"
-        />
+        android:layout_above="@+id/intentTextView" />
+    <Button
+        android:id="@+id/eastView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/purple_700"
+        android:text="Eastern-Conference"
+        android:textColor="@color/white" />
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/eastView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint=" Input Eastern"
+        android:inputType="textPersonName"
+        android:visibility="visible" />
 
 </RelativeLayout>
 
