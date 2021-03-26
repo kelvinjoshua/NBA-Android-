@@ -29,6 +29,6 @@ public class Adapter extends ArrayAdapter {
         String singleTeam = mTeams[position];
         String record = mseed[position];
         //format specifiers for strings %s
-        return String.format("%s '/s current seed is% players", singleTeam,record);
+        return String.format(" %s  current seed is  %s ", singleTeam,record);
     }
 }
