@@ -14,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.firstip.adapters.Adapter;
+import com.example.firstip.models.Team;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,18 +27,21 @@ public class Teams extends AppCompatActivity {
     @BindView(R.id.westButton) Button West;
     @BindView(R.id.editConferenceName) EditText western;
 
-
+    public List<Team> eastTeams;
+    public Adapter teamAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
-        //showText = (TextView) findViewById(R.id.intentTextView);
+
+        Intent intent = getIntent();
+        String Retrieved = intent.getStringExtra("East");
 
         ButterKnife.bind(this);
         /*Custom adapter*/
         Adapter adapter = new Adapter(this, android.R.layout.simple_list_item_1,teams,Seed);
         //attach adapter to list view
-
+            /*
         last.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +65,6 @@ public class Teams extends AppCompatActivity {
         Intent intent = getIntent();
         String Retrieved = intent.getStringExtra("Team");
         //we get text and set it to the display value//
-        showText.setText("Here are the Standings for " + " " + Retrieved + " "+"Western-Conference");
+        //showText.setText("Here are the Standings for " + " " + Retrieved + " "+"Western-Conference");
     }
 }
