@@ -54,7 +54,7 @@ public class Teams extends AppCompatActivity {
             public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
 
                 if(response.isSuccessful()){
-                    //hideprogressbar
+                    hideProgressBar();
                     eastTeams = response.body().getTeams();
                     //note no resource for our layout
                     teamAdapter = new Adapter(Teams.this, eastTeams);
@@ -65,13 +65,17 @@ public class Teams extends AppCompatActivity {
                     recycler.setLayoutManager(layoutManager);
                     recycler.setHasFixedSize(true);
 
-                    //show teams
+                    showTeams();
+                }
+                else{
+                    showUnsuccessfulMessage();
                 }
             }
 
             @Override
             public void onFailure(Call<NbaSearchResponse> call, Throwable t) {
-
+                hideProgressBar();
+                showFailureMessage();
             }
         });
         /*Custom adapter*/
@@ -122,4 +126,5 @@ public class Teams extends AppCompatActivity {
     private void hideProgressBar() {
         progressBar.setVisibility(View.GONE);//toggle from visible to gone
     }
+
 }
