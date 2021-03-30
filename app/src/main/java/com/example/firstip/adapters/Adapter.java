@@ -1,8 +1,11 @@
 package com.example.firstip.adapters;
 
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,20 +23,29 @@ public class Adapter extends RecyclerView.Adapter<Adapter.teamViewHolder>{
             teams = teams;
 
     }
+
+    @NonNull
+    @Override
+    public teamViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull teamViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
     public class teamViewHolder extends RecyclerView.ViewHolder{
+        private Context context;
+        public teamViewHolder(View itemView){
+            super(itemView);
 
+        }
     }
 
-    @Override
-    public int getCount() {
-        return mTeams.length;
-    }
-
-    @Override
-    public Object getItem(int position) {
-        String singleTeam = mTeams[position];
-        String record = mseed[position];
-        //format specifiers for strings %s
-        return String.format(" %s  current seed is  %s ", singleTeam,record);
-    }
 }

@@ -65,7 +65,7 @@ public class Teams extends AppCompatActivity {
             }
         });
         /*Custom adapter*/
-        Adapter adapter = new Adapter(this, android.R.layout.simple_list_item_1,teams,Seed);
+
         //attach adapter to list view
             /*
         last.setOnClickListener(new View.OnClickListener() {
@@ -88,8 +88,7 @@ public class Teams extends AppCompatActivity {
 
         */
            
-        Intent intent = getIntent();
-        String Retrieved = intent.getStringExtra("Team");
+
         //we get text and set it to the display value//
         //showText.setText("Here are the Standings for " + " " + Retrieved + " "+"Western-Conference");
     }
