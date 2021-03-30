@@ -5,6 +5,7 @@ import retrofit2.http.Query;
 
 public interface RapidApi {
     //relative urls
-   // @GET(teams/league)
-    //@Query("league") String Standard;
+   // @GET(teams/confName)
+    //@Query("confname") String East;
+    //@Query("confname") String West;
 }
