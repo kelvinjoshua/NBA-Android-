@@ -14,12 +14,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.firstip.adapters.Adapter;
+import com.example.firstip.models.NbaSearchResponse;
 import com.example.firstip.models.Team;
+import com.example.firstip.network.RapidApi;
+import com.example.firstip.network.RapidClient;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Teams extends AppCompatActivity {
     @BindView(R.id.errorTextView) TextView errorText;
@@ -36,8 +42,28 @@ public class Teams extends AppCompatActivity {
 
         Intent intent = getIntent();
         String Retrieved = intent.getStringExtra("East");
+        //this instance will be a retrofit object to allow building and making requests
+        RapidApi client = RapidClient.getClient();
 
-        ButterKnife.bind(this);
+        Call<NbaSearchResponse> call = client.getTeams(Retrieved);
+        //processing request
+        call.enqueue(new Callback<NbaSearchResponse>() {
+            @Override
+            public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
+
+                if(response.isSuccessful()){
+
+                    eastTeams = response.body().getTeams();
+                    //note no resource for our layout
+                    teamAdapter = new Adapter(Teams.this, eastTeams);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<NbaSearchResponse> call, Throwable t) {
+
+            }
+        });
         /*Custom adapter*/
         Adapter adapter = new Adapter(this, android.R.layout.simple_list_item_1,teams,Seed);
         //attach adapter to list view

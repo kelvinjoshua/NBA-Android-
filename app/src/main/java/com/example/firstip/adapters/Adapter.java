@@ -4,19 +4,24 @@ import android.content.Context;
 import android.widget.ArrayAdapter;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class Adapter extends ArrayAdapter {
+import com.example.firstip.models.Team;
 
-    private Context mContext;
-    private String[] mTeams;
-    private String[] mseed;
-    //resource here is our layout
-    public Adapter(Context mContext,int resource,String[] mTeams,String[] mseed){
-            //as subClass,access to overriden methods and private properties
-        super(mContext,resource);
-        this.mContext =mContext;
-        this.mseed =mseed;
-        this.mTeams =mTeams;
+import java.util.List;
+
+public class Adapter extends RecyclerView.Adapter<Adapter.teamViewHolder>{
+//Adapter populates,view stores
+    private Context Context;
+    private List<Team> teams;
+
+    public Adapter(Context Context ,List <Team> teams){
+            Context= Context;
+            teams = teams;
+
+    }
+    public class teamViewHolder extends RecyclerView.ViewHolder{
+
     }
 
     @Override

@@ -11,7 +11,8 @@ public interface RapidApi {
     @GET("teams/confName")
     //call object to perfom http request
     Call<NbaSearchResponse> getTeams(
-            @Query("confname") String East,
-            @Query("confname") String West);
-
+            @Query("confname") String East
+            );
+    //models west
+    // Call<NbaSearchResponse>
 }
