@@ -1,6 +1,7 @@
 package com.example.firstip.adapters;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firstip.R;
 import com.example.firstip.models.Team;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -33,17 +35,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.teamViewHolder>{
     @NonNull
     @Override
     public teamViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        //inflate layout return viewHolder
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.team_list_item, parent, false);
+        teamViewHolder viewHolder = new teamViewHolder(view);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull teamViewHolder holder, int position) {
-
+        holder.bindTeam(teams.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return teams.size();
     }
 
     public class teamViewHolder extends RecyclerView.ViewHolder{
@@ -59,7 +64,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.teamViewHolder>{
         public void bindTeam(Team team){
             City.setText(team.getCity());
             teamName.setText(team.getFullName());
-
+            Picasso.get().load(team.getLogo()).into(logo);
         }
     }
 
