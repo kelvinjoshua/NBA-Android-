@@ -25,9 +25,7 @@ public class Teams extends AppCompatActivity {
     @BindView(R.id.editTextTextPersonName)
     EditText eastern;
 
-    private  String[] teams = new String []{"Lakers","Spurs","Rockets","Golden State","Phoenix-suns","Utah-Jazz",
-    "Clippers","Nuggets","Portland-Blazers","Spurs"};
-    private String [] Seed = new String[]{"28-15","22-17","11-30","22-21","28-13","30-11","27-16","25-17","22-17","22-19"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,13 +47,15 @@ public class Teams extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        mlist.setAdapter(adapter);
-        mlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       // mlist.setAdapter(adapter);
+       /* mlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(Teams.this,"Clinched Playoff position",Toast.LENGTH_LONG).show();
             }
         });
+
+        */
            
         Intent intent = getIntent();
         String Retrieved = intent.getStringExtra("Team");

@@ -28,7 +28,7 @@ public class RapidClient {
             }).build();//build each request with access Credentials
             retrofit = new Retrofit.Builder().baseUrl(RAPID_BASE_URL).client(okHttpClient).addConverterFactory(GsonConverterFactory.create()).build();
         }
-
+        return retrofit.create(RapidApi.class);//create a RapidApi instance to be invoked/make contact with retrofit instance
     };
 
 
