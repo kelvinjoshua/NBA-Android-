@@ -7,7 +7,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.example.firstip.Constants.RAPID_BASE_URL;
 import static com.example.firstip.Constants.RAPID_NBA_KEY;
 
 public class RapidClient {
@@ -23,7 +25,8 @@ public class RapidClient {
                             .build();
                     return chain.proceed(newRequest);
                 }
-            })
+            }).build();//build each request with access Credentials
+            retrofit = new Retrofit.Builder().baseUrl(RAPID_BASE_URL).client(okHttpClient).addConverterFactory(GsonConverterFactory.create()).build();
         }
 
     };
