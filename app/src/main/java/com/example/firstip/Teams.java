@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 
 public class Teams extends AppCompatActivity {
     //western CONFERENCE
-    @BindView(R.id.intentTextView) TextView showText;
+    @BindView(R.id.) TextView showText;
     //@BindView(R.id.listItems) ListView mlist;
     @BindView(R.id.eastView) Button last;
     @BindView(R.id.editTextTextPersonName)
