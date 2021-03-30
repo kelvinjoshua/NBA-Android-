@@ -1,16 +1,19 @@
 
 package com.example.firstip.models;
 
+import java.util.List;
 //import javax.annotation.Generated;
+
+import com.example.firstip.models.*;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")
 public class NbaSearchResponse {
 
-    @SerializedName("api")
+    @SerializedName("teams")
     @Expose
-    private Api api;
+    private List<Team> teams = null;
 
     /**
      * No args constructor for use in serialization
@@ -21,19 +24,19 @@ public class NbaSearchResponse {
 
     /**
      * 
-     * @param api
+     * @param teams
      */
-    public NbaSearchResponse(Api api) {
+    public NbaSearchResponse(List<Team> teams) {
         super();
-        this.api = api;
+        this.teams = teams;
     }
 
-    public Api getApi() {
-        return api;
+    public List<Team> getTeams() {
+        return teams;
     }
 
-    public void setApi(Api api) {
-        this.api = api;
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
     }
 
 }
