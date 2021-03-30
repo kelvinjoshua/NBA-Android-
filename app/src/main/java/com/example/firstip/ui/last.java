@@ -30,8 +30,8 @@ public class last extends AppCompatActivity {
         setContentView(R.layout.activity_last);
         ButterKnife.bind(this);
 
-        Adapter east = new Adapter(this,android.R.layout.simple_list_item_1,teams,Seed);
-        lastListView.setAdapter(east);
+        //Adapter east = new Adapter(this,android.R.layout.simple_list_item_1,teams,Seed);
+        //lastListView.setAdapter(east);
         lastListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
