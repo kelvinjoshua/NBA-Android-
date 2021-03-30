@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +34,7 @@ public class Teams extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView recycler;
     @BindView(R.id.westButton) Button West;
     @BindView(R.id.editConferenceName) EditText western;
-
+    @BindView(R.id.progressBar) ProgressBar progressBar;
     public List<Team> eastTeams;
     public Adapter teamAdapter;
     @Override
@@ -100,5 +101,25 @@ public class Teams extends AppCompatActivity {
 
         //we get text and set it to the display value//
         //showText.setText("Here are the Standings for " + " " + Retrieved + " "+"Western-Conference");
+    }
+
+    //Toggling visibility and providing feedback
+    private void showFailureMessage() {
+        errorText.setText("Something went wrong. Please check your Internet connection and try again later");
+        errorText.setVisibility(View.VISIBLE);
+    }
+
+    private void showUnsuccessfulMessage() {
+        errorText.setText("Something went wrong. Please try again later");
+        errorText.setVisibility(View.VISIBLE);
+    }
+
+    private void showTeams() {
+        recycler.setVisibility(View.VISIBLE);
+        //mLocationTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);//toggle from visible to gone
     }
 }
