@@ -15,7 +15,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildTypes.each {
+        it.buildConfigField 'String', 'RAPID_NBA_KEY', RapidNbaKey
+    }
     buildTypes {
         release {
             minifyEnabled false
