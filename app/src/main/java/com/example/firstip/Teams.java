@@ -1,6 +1,7 @@
 package com.example.firstip;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -52,10 +53,18 @@ public class Teams extends AppCompatActivity {
             public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
 
                 if(response.isSuccessful()){
-
+                    //hideprogressbar
                     eastTeams = response.body().getTeams();
                     //note no resource for our layout
                     teamAdapter = new Adapter(Teams.this, eastTeams);
+                    recycler.setAdapter(teamAdapter);
+
+                    //layout manager
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);
+                    recycler.setLayoutManager(layoutManager);
+                    recycler.setHasFixedSize(true);
+
+                    //show teams
                 }
             }
 
