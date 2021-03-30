@@ -1,6 +1,7 @@
 package com.example.firstip;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,12 +19,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Teams extends AppCompatActivity {
-    //western CONFERENCE
-    @BindView(R.id.) TextView showText;
-    //@BindView(R.id.listItems) ListView mlist;
-    @BindView(R.id.eastView) Button last;
-    @BindView(R.id.editTextTextPersonName)
-    EditText eastern;
+    @BindView(R.id.errorTextView) TextView errorText;
+    @BindView(R.id.recyclerView) RecyclerView recycler;
+    @BindView(R.id.westButton) Button West;
+    @BindView(R.id.editConferenceName) EditText western;
 
 
     @Override
