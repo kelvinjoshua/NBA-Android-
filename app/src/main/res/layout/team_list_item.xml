@@ -4,13 +4,13 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:background="#ffffff"
         android:layout_height="match_parent"
         android:padding="10dp">
         <ImageView
-            android:id="@+id/restaurantImageView"
+            android:id="@+id/logo"
             android:layout_width="160dp"
             android:layout_height="213dp"
             android:scaleType="centerCrop"
