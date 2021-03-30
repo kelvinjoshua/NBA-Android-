@@ -1,4 +1,4 @@
-package com.example.firstip;
+package com.example.firstip.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

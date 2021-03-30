@@ -12,13 +12,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.firstip.adapters.Adapter;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Teams extends AppCompatActivity {
     //western CONFERENCE
     @BindView(R.id.intentTextView) TextView showText;
-    @BindView(R.id.listItems) ListView mlist;
+    //@BindView(R.id.listItems) ListView mlist;
     @BindView(R.id.eastView) Button last;
     @BindView(R.id.editTextTextPersonName)
     EditText eastern;

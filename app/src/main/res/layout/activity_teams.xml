@@ -12,14 +12,39 @@
         android:layout_height="wrap_content"
         android:id="@+id/intentTextView"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+    <!--
     <ListView
         android:id="@+id/listItems"
         style="@style/Widget.AppCompat.ListView.DropDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/intentTextView" />
+        android:layout_above="@+id/intentTextView" /> -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/intentTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+    <!-- Visibility set to false and toggled depending on whether network request is ongoing or failed,error text on failure -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/eastView"
         android:layout_width="match_parent"
@@ -29,6 +54,7 @@
         android:background="@color/purple_700"
         android:text="Eastern-Conference"
         android:textColor="@color/white" />
+
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
