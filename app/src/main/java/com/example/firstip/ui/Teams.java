@@ -1,4 +1,4 @@
-package com.example.firstip;
+package com.example.firstip.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,14 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.firstip.R;
 import com.example.firstip.adapters.Adapter;
 import com.example.firstip.models.NbaSearchResponse;
 import com.example.firstip.models.Team;
@@ -24,7 +22,6 @@ import com.example.firstip.network.RapidClient;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

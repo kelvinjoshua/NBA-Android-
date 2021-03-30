@@ -1,14 +1,14 @@
-package com.example.firstip;
+package com.example.firstip.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.example.firstip.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //test whether a toast will appear on submit
-                Intent intent = new Intent(MainActivity.this,Teams.class);
+                Intent intent = new Intent(MainActivity.this, Teams.class);
                 String eConference = mTeamEdit.getText().toString();
                // Log.d(TAG,teamName);
                 intent.putExtra("East", eConference);

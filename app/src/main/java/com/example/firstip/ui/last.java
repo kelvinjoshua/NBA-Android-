@@ -1,4 +1,4 @@
-package com.example.firstip;
+package com.example.firstip.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.firstip.R;
 import com.example.firstip.adapters.Adapter;
 
 import butterknife.BindView;
