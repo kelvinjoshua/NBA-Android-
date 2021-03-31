@@ -15,6 +15,7 @@
             android:layout_width="160dp"
             android:layout_height="213dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/basket"
              />
         <TextView
             android:layout_width="wrap_content"

@@ -40,39 +40,43 @@ public class Teams extends AppCompatActivity {
         setContentView(R.layout.activity_teams);
 
         Intent intent = getIntent();
-        String Retrieved = intent.getStringExtra("East");
+        String confname = intent.getStringExtra("East");
         //this instance will be a retrofit object to allow building and making requests
         RapidApi client = RapidClient.getClient();
 
-        Call<NbaSearchResponse> call = client.getTeams(Retrieved);
+        Call<NbaSearchResponse> call = client.getTeams(confname);
         //processing request
         call.enqueue(new Callback<NbaSearchResponse>() {
             @Override
             public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
-
+                //response = okHttpClient.newCall(request).execute();
+                //hideProgressBar();
                 if(response.isSuccessful()){
-                    hideProgressBar();
+
                     eastTeams = response.body().getTeams();
                     //note no resource for our layout
                     teamAdapter = new Adapter(Teams.this, eastTeams);
-                    recycler.setAdapter(teamAdapter);
-
+                    ;
+                    //teamAdapter.notifyDataSetChanged();
                     //layout manager
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);
                     recycler.setLayoutManager(layoutManager);
                     recycler.setHasFixedSize(true);
-
-                    showTeams();
+                    recycler.setAdapter(teamAdapter);
+                   // showTeams();
                 }
+                /*
                 else{
                     showUnsuccessfulMessage();
                 }
+
+                 */
             }
 
             @Override
             public void onFailure(Call<NbaSearchResponse> call, Throwable t) {
-                hideProgressBar();
-                showFailureMessage();
+                //hideProgressBar();
+                //showFailureMessage();
             }
         });
         /*Custom adapter*/
