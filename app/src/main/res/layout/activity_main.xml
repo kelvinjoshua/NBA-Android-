@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/purple_700"
+        android:backgroundTint="@color/darkblue"
         android:text="Find teams"
         android:textColor="@color/white" />
 
