@@ -2,17 +2,17 @@
 Kelvin Joshua Bale
 
 ## Description.
-This is an adnroid app that allows you to view the current standings for the Nba league.
+This is an android app that allows you to view the Current teams in the NBA ,
+as well as additional team information,such as The city its located in and the teams Alias.
 
-## Technologies used 
-* Android.
-* Java.
-* Butterknifes.
-* Adapter.
+## Important Technologies used
+* Parcelable implementation
+* Custom Fragment
+* Picasso for loading images
+* Web API service (Rapid API) https://rapidapi.com/marketplace
 
 ## Known Bugs
-* Navigating from 2nd activty to 3rd activity.
-* User is redirected to Main activity.
+*
 
 ## Licensing
 copyright (c) 2021 kelvinjoshua
