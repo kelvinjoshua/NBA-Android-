@@ -2,14 +2,23 @@
 Kelvin Joshua Bale
 
 ## Description.
-This is Android app that allows you to view the current Teams  for the Nba league.That is the eastern and western Conference.git st
+* This is Android app that allows you to view the current Teams  for the Nba league.
+ * That is the eastern and western Conference.
 
 ## Technologies used 
 * Android.
 * Java.
 * Butterknifes.
 * Custom Adapter.
-## images.
+* Toasts.
+* Cards
+## Installation instructions.
+* On Android Studio,create new Empty project.
+* On this repository,navigate to week1 branch
+* Download and extract the zip file to desired location.
+* In our Android project, File/open/ (extractedfile here).
+* Run App either on Virtual/Connected Physical device.
+## Demo-Images.
 * EasternConference View
 
  <img src="https://user-images.githubusercontent.com/60692205/113231280-8eeaa900-92a3-11eb-994b-398ad38b5dd8.jpg" width="300" height="600">
