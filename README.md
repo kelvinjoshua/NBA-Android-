@@ -8,15 +8,19 @@ This is Android app that allows you to view the current Teams  for the Nba leagu
 * Android.
 * Java.
 * Butterknifes.
-* Adapter.
-
+* Custom Adapter.
 ## images.
 * EasternConference View
-![east](https://user-images.githubusercontent.com/60692205/113231280-8eeaa900-92a3-11eb-994b-398ad38b5dd8.jpg)
+
+ <img src="https://user-images.githubusercontent.com/60692205/113231280-8eeaa900-92a3-11eb-994b-398ad38b5dd8.jpg" width="300" height="600">
+ 
 * Western conference view and input
-![west](https://user-images.githubusercontent.com/60692205/113231363-bf324780-92a3-11eb-9ba1-7c59c25a202b.jpg)
+
+ <img src="https://user-images.githubusercontent.com/60692205/113231363-bf324780-92a3-11eb-9ba1-7c59c25a202b.jpg" width="300" height="600">
+ 
 * Western conference view and Toast
-![westToast](https://user-images.githubusercontent.com/60692205/113231417-de30d980-92a3-11eb-96d8-d11d40e3f934.jpg)
+
+ <img src="https://user-images.githubusercontent.com/60692205/113231417-de30d980-92a3-11eb-96d8-d11d40e3f934.jpg" width="300" height="600">
 
 ## Licensing
 copyright (c) 2021 kelvinjoshua
