@@ -42,6 +42,8 @@ public class Teams extends AppCompatActivity {
             public void onClick(View v) {
                 //start another activity
                 Intent intent = new Intent(Teams.this,last.class);
+                 String teamName = eastern.getText().toString();
+                 intent.putExtra("Conference",teamName);
                 //String conferenceName = eastern.getText().toString();
                 //intent.putExtra("EasternConf",conferenceName); //key-value
                 startActivity(intent);
