@@ -16,8 +16,7 @@ import butterknife.ButterKnife;
 public class last extends AppCompatActivity {
     //Eastern conference  ,intentTextView,listView
     @BindView(R.id.intentTextView) TextView lastView;
-    @BindView(R.id.listView) ListView lastListView;
-
+    @BindView((R.id.intentTexT)) TextView showText;
     private  String[] teams = new String []{"76ers","bucks","Nets","Hornets","Knicks","Hawks",
             "Heat","Celtics","Pacers","Cavaliers"};
     private String [] Seed = new String[]{"32-13","29-14","30-15","22-21","23-22","22-22","22-23","21-23","19-24","17-27"};
@@ -36,6 +35,8 @@ public class last extends AppCompatActivity {
             }
         });
         Intent intent = getIntent();
+         String retrieved = intent.getStringExtra("Conference");
+        showText.setText("Here are the Standings for " + " " + retrieved + " "+"Eastern-Conference");
         //String Retrieved = intent.getStringExtra("EasternConf");
         //showText.setText("Here are the Standings for " + " " + Retrieved + " "+"Western-Conference");
     }
