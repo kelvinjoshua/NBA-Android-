@@ -45,7 +45,7 @@ public class Teams extends AppCompatActivity {
         //this instance will be a retrofit object to allow building and making requests
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
         //our recycler needs a layout manager and an adapter
-
+        //Get default shared preference here
         recycler.setLayoutManager(layoutManager);
         recycler.setHasFixedSize(true);
         recycler.setAdapter(teamAdapter);
