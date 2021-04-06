@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //if not a string
             if(!(eConference).equals("")) {
-               addToSharedPreferences(eConference);
+              // addToSharedPreferences(eConference);
           }
             // Log.d(TAG,teamName);
             intent.putExtra("East", eConference);
@@ -63,6 +63,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textEntry.push().setValue(conference);
     }
     public void addToSharedPreferences(String conference){
-       // editor.putString("")
+       //editor.putString(Constants.PREFERENCE_TEXT,conference).apply();
     }
 }
