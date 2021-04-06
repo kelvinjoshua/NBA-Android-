@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.firstip.R;
 import com.example.firstip.adapters.Adapter;
+import com.example.firstip.models.Api;
 import com.example.firstip.models.NbaSearchResponse;
 import com.example.firstip.models.Team;
 import com.example.firstip.network.RapidApi;
@@ -35,6 +37,9 @@ public class Teams extends AppCompatActivity {
     @BindView(R.id.progressBar) ProgressBar progressBar;
     public List<Team> eastTeams;
     private Adapter teamAdapter;
+    private static final String TAG = "Teams";
+    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,30 +48,32 @@ public class Teams extends AppCompatActivity {
         Intent intent = getIntent();
         String confname = intent.getStringExtra("East");
         //this instance will be a retrofit object to allow building and making requests
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
-        //our recycler needs a layout manager and an adapter
 
-        recycler.setLayoutManager(layoutManager);
-        recycler.setHasFixedSize(true);
-        recycler.setAdapter(teamAdapter);
         RapidApi client = RapidClient.getClient();
         //Response<NbaSearchResponse> response = client.newCall(request).execute();
-        Call<NbaSearchResponse> call = client.getTeams();
+        Call<NbaSearchResponse> call = client.getApi();
         //processing request
-
         call.enqueue(new Callback<NbaSearchResponse>() {
             @Override
             public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
+               // Log.d("error","error on response");
                 //response = okHttpClient.newCall(request).execute();
                 //hideProgressBar();
                 //Response response = client.newCall(request).execute();
                 if(response.isSuccessful()){
+                    //Log.d(TAG,response.body().getTeams().toString());
                    // assert response.body() != null;
-                    eastTeams = response.body().getTeams();
+                    assert response.body() != null;
+                    eastTeams =response.body().getApi().getTeams();
+                   // Log.d("data",eastTeams.toString());
+                    //our recycler needs a layout manager and an adapter
+                    recycler.setLayoutManager(layoutManager);
+                    recycler.setHasFixedSize(true);
+                    recycler.setAdapter(teamAdapter);
                     teamAdapter = new Adapter(Teams.this, eastTeams);
                     //instantiate an adapter and associate it to our recycler view
-                    //teamAdapter = new Adapter(Teams.this, eastTeams);
-                    teamAdapter.notifyDataSetChanged();
+
+                   // teamAdapter.notifyDataSetChanged();
                     //create layout manager for respective recycler view
                    showTeams();
                 }
@@ -82,6 +89,7 @@ public class Teams extends AppCompatActivity {
             public void onFailure(Call<NbaSearchResponse> call, Throwable t) {
                 //hideProgressBar();
                 //showFailureMessage();
+                Log.d("errr","failure");
             }
         });
         /*Custom adapter*/

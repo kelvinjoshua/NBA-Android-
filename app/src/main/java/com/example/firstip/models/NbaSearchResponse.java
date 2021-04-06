@@ -1,45 +1,39 @@
 
 package com.example.firstip.models;
 
-import java.util.List;
-//import javax.annotation.Generated;
-
-import com.example.firstip.models.*;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.parceler.Parcel;
 
-//@Generated("jsonschema2pojo")
-@Parcel
 public class NbaSearchResponse {
 
-    @SerializedName("teams")
+    @SerializedName("api")
     @Expose
-    private List<Team> teams = null;
+    public Api api;
 
     /**
      * No args constructor for use in serialization
-     * 
+     * public NbaSearchResponse() {
+     *     }
      */
-    public NbaSearchResponse() {
-    }
+
 
     /**
      * 
-     * @param teams
+     * @param api
      */
-    public NbaSearchResponse(List<Team> teams) {
+    public NbaSearchResponse(Api api) {
         super();
-        this.teams = teams;
+        this.api = api;
     }
 
-    public List<Team> getTeams() {
-        return teams;
+    public Api getApi() {
+        return api;
     }
 
-    public void setTeams(List<Team> teams) {
-        this.teams = teams;
+
+    public void setApi(Api api) {
+        this.api = api;
     }
 
 }
