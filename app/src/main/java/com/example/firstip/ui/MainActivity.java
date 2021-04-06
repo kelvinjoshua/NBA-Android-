@@ -35,9 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //FirebaseObject,DB reference,valueEventListener
         textEntry = FirebaseDatabase.getInstance().getReference().child(Constants.FIREBASE_CHILD_ENTRY);
         textListener = textEntry.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for(DataSnapshot textSnap:snapshot.getChildren()){
@@ -81,9 +83,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();
         }
     }
-    //reference fb.getInstance().getRef().child("key").push().setValue(value)
+
+    //Reference fb.getInstance().getRef().child("key").push().setValue(value)
     public void saveLocationToFirebase(String conference){
         textEntry.push().setValue(conference);
+    }
+
+    //destroy activity once listening is done
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        textEntry.removeEventListener(textListener);
     }
     public void addToSharedPreferences(String conference){
        //editor.putString(Constants.PREFERENCE_TEXT,conference).apply();
