@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="90dp"
+        android:padding="75dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout"
@@ -35,7 +35,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:visibility="visible"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -48,7 +48,7 @@
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:visibility="visible"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
 
         <Button
@@ -83,7 +83,7 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_above="@+id/imageView"
-        android:paddingTop="45dp"
+        android:paddingTop="35dp"
         android:layout_centerHorizontal="true"
         tools:ignore="NotSibling" />
 

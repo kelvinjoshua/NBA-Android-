@@ -35,7 +35,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:visibility="visible"
-            android:textSize="20sp" />
+            android:textSize="15sp"  />
 
 
         <EditText
@@ -50,8 +50,8 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:visibility="visible"
-
-            android:textSize="20sp" />
+            android:textSize="15sp"
+            />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -65,7 +65,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:visibility="visible"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
 
         <EditText
@@ -80,7 +80,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:visibility="visible"
-            android:textSize="20sp" />
+            android:textSize="15sp"  />
 
 
         <Button
