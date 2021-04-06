@@ -3,36 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/basket" />
+
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:background="#ffffff"
         android:layout_height="match_parent"
         android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="160dp"
-            android:layout_height="213dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/basket"
-             />
+        <!--PLaceholder logo -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/city"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="TeamName"
-            />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fullName"
+            android:text="City"
+            android:textColor="@color/darkblue"
             android:textSize="20dp"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/fullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="TeamName"
-            />
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

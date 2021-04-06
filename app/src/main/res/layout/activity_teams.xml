@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.Teams">
 
+    <!--
+    <ListView
+        android:id="@+id/listItems"
+        style="@style/Widget.AppCompat.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/intentTextView" /> -->
+
+    <!-- Visibility set to false and toggled depending on whether network request is ongoing or failed,error text on failure -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginRight="-4dp"
+        android:visibility="visible" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,22 +35,7 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:visibility="visible"/>
-    <!--
-    <ListView
-        android:id="@+id/listItems"
-        style="@style/Widget.AppCompat.ListView.DropDown"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/intentTextView" /> -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="16dp"
-        android:visibility="visible" />
-    <!-- Visibility set to false and toggled depending on whether network request is ongoing or failed,error text on failure -->
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"

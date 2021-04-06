@@ -22,6 +22,7 @@ import com.example.firstip.network.RapidClient;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -33,37 +34,41 @@ public class Teams extends AppCompatActivity {
     @BindView(R.id.editConferenceName) EditText western;
     @BindView(R.id.progressBar) ProgressBar progressBar;
     public List<Team> eastTeams;
-    public Adapter teamAdapter;
+    private Adapter teamAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
-
+        ButterKnife.bind(this);
         Intent intent = getIntent();
         String confname = intent.getStringExtra("East");
         //this instance will be a retrofit object to allow building and making requests
-        RapidApi client = RapidClient.getClient();
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
+        //our recycler needs a layout manager and an adapter
 
-        Call<NbaSearchResponse> call = client.getTeams(confname);
+        recycler.setLayoutManager(layoutManager);
+        recycler.setHasFixedSize(true);
+        recycler.setAdapter(teamAdapter);
+        RapidApi client = RapidClient.getClient();
+        //Response<NbaSearchResponse> response = client.newCall(request).execute();
+        Call<NbaSearchResponse> call = client.getTeams();
         //processing request
+
         call.enqueue(new Callback<NbaSearchResponse>() {
             @Override
             public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
                 //response = okHttpClient.newCall(request).execute();
                 //hideProgressBar();
+                //Response response = client.newCall(request).execute();
                 if(response.isSuccessful()){
-
+                   // assert response.body() != null;
                     eastTeams = response.body().getTeams();
-                    //note no resource for our layout
                     teamAdapter = new Adapter(Teams.this, eastTeams);
-                    ;
-                    //teamAdapter.notifyDataSetChanged();
-                    //layout manager
-                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);
-                    recycler.setLayoutManager(layoutManager);
-                    recycler.setHasFixedSize(true);
-                    recycler.setAdapter(teamAdapter);
-                   // showTeams();
+                    //instantiate an adapter and associate it to our recycler view
+                    //teamAdapter = new Adapter(Teams.this, eastTeams);
+                    teamAdapter.notifyDataSetChanged();
+                    //create layout manager for respective recycler view
+                   showTeams();
                 }
                 /*
                 else{
