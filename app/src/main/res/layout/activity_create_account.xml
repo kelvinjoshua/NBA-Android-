@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="70dp"
+        android:padding="55dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout"
@@ -54,7 +54,7 @@
             android:textSize="20sp" />
 
         <EditText
-
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
@@ -87,7 +87,7 @@
             android:id="@+id/createUserButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="7dp"
             android:text="Sign up"
             android:textSize="50px"
             android:backgroundTint="@color/darkblue"
@@ -97,7 +97,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="18sp"
@@ -116,7 +116,7 @@
         android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:paddingTop="45dp"
+        android:paddingTop="30dp"
         android:layout_above="@+id/imageid"
         android:layout_centerHorizontal="true"
         tools:ignore="NotSibling" />

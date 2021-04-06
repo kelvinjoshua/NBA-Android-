@@ -27,7 +27,7 @@ public class login extends AppCompatActivity  implements View.OnClickListener{
     public void onClick(View v) {
         if(v == registerHere){
             //Intent to start create account activity
-            Intent intent = new Intent(this,CreateAccount.class);
+            Intent intent = new Intent(login.this,CreateAccount.class);
             startActivity(intent);
             finish();//destroy this activity due to stack to prevent unnecessary back visits
         }
