@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //public static final String TAG = MainActivity.class.getSimpleName();
     @BindView(R.id.findTeamButton) Button mTeamBut;
     @BindView(R.id.editTextTextPersonName) EditText mTeamEdit;
@@ -32,22 +32,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //FirebaseObject and DB reference
         textEntry = FirebaseDatabase.getInstance().getReference().child(Constants.FIREBASE_CHILD_ENTRY);
-
+        //preferences
         sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
         editor= sharedPreferences.edit();
-        ButterKnife.bind(this);
-        mTeamBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //test whether a toast will appear on submit
-                Intent intent = new Intent(MainActivity.this, Teams.class);
-                String eConference = mTeamEdit.getText().toString();
-               // Log.d(TAG,teamName);
-                intent.putExtra("East", eConference);
-                startActivity(intent);
 
-                //Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();
-            }
-        });
+        ButterKnife.bind(this);
+        //mTeamBut.setOnClickListener(this);//setClick listener here
+        mTeamBut.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+        if (v == mTeamBut) {
+            //test whether a toast will appear on submit
+            Intent intent = new Intent(MainActivity.this, Teams.class);
+            String eConference = mTeamEdit.getText().toString();
+            saveLocationToFirebase(eConference);
+
+            //if not a string
+            if(!(eConference).equals("")) {
+               addToSharedPreferences(eConference);
+          }
+            // Log.d(TAG,teamName);
+            intent.putExtra("East", eConference);
+            startActivity(intent);
+            //Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();
+        }
+    }
+    //reference fb.getInstance().getRef().child("key").push().setValue(value)
+    public void saveLocationToFirebase(String conference){
+        textEntry.push().setValue(conference);
+    }
+    public void addToSharedPreferences(String conference){
+       // editor.putString("")
     }
 }
