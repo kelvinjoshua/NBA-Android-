@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,7 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textListener = textEntry.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                    for(DataSnapshot textSnap:snapshot.getChildren()){
+                        //variable to store any change on the specified  node
+                        String eConference = textSnap.getValue().toString();
+                        //display the text retrieved
+                        Log.d("TEXT UPDATED","CONFERENCE NAME: "+ eConference);
+                    }
             }
 
             @Override
