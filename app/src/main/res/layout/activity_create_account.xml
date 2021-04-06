@@ -9,19 +9,20 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp"
+        android:padding="70dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout"
         android:background="@drawable/basket">
 
+
         <ImageView
+            android:id="@+id/imageid"
             android:layout_width="match_parent"
             android:layout_height="194dp"
-            app:srcCompat="@drawable/nba"
+            android:paddingTop="30dp"
             android:scaleType="centerCrop"
-            />
-
+            app:srcCompat="@drawable/nba" />
 
         <EditText
             android:id="@+id/nameEditText"
@@ -88,6 +89,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Sign up"
+            android:textSize="50px"
             android:backgroundTint="@color/darkblue"
             android:layout_marginTop="15dp"
             android:textColor="@color/white" />
@@ -96,9 +98,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="17sp"
+            android:textSize="18sp"
             android:text="Already have an account? Log in here!"
             android:id="@+id/loginTextView"
             android:layout_gravity="center_horizontal" />
@@ -111,11 +113,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Account"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
+        android:paddingTop="45dp"
+        android:layout_above="@+id/imageid"
+        android:layout_centerHorizontal="true"
+        tools:ignore="NotSibling" />
 </RelativeLayout>
     <!--   <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
