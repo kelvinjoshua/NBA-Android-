@@ -1,5 +1,6 @@
 package com.example.firstip.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.firstip.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,6 +26,8 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
     @BindView(R.id.loginTextView) TextView mLoginTextView;
     private FirebaseAuth Auth;
+    //listener to ensure user is saved
+    private FirebaseAuth.AuthStateListener AuthListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +35,9 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
         //authentication object
         Auth = FirebaseAuth.getInstance();
+        //authentication object listener
+        createAuthListener();
+
         mLoginTextView.setOnClickListener(this);
         mCreateUserButton.setOnClickListener(this);
     }
@@ -64,5 +71,37 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(CreateAccount.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void createAuthListener() {
+        AuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = firebaseAuth.getCurrentUser();
+                //start main activity on login if user exists in our database
+                if (user != null) {
+                    Intent intent = new Intent(CreateAccount.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+        };
+    }
+    //we need to actually attach our auth object to our listener,to make our main activity foregrounded/visible to us
+    @Override
+    public void onStart() {
+        super.onStart();
+        Auth.addAuthStateListener(AuthListener);
+    }
+
+    //kill activity
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (AuthListener != null) {
+            Auth.removeAuthStateListener(AuthListener);
+        }
     }
 }
