@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //FirebaseObject and DB reference
         textEntry = FirebaseDatabase.getInstance().getReference().child(Constants.FIREBASE_CHILD_ENTRY);
+
+        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+        editor= sharedPreferences.edit();
         ButterKnife.bind(this);
         mTeamBut.setOnClickListener(new View.OnClickListener() {
             @Override
