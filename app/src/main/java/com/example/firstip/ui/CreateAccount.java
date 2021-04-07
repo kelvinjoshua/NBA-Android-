@@ -27,7 +27,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.loginTextView) TextView mLoginTextView;
     private FirebaseAuth Auth;
     //listener to ensure user is saved
-    private FirebaseAuth.AuthStateListener AuthListener;
+    public FirebaseAuth.AuthStateListener AuthListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,9 +74,8 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     }
 
     private void createAuthListener() {
-        AuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+        AuthListener = firebaseAuth ->  {
+
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
                 //start main activity on login if user exists in our database
                 if (user != null) {
@@ -85,7 +84,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                     startActivity(intent);
                     finish();
                 }
-            }
+
 
         };
     }
