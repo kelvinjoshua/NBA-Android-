@@ -5,11 +5,24 @@ Kelvin Joshua Bale
 This is an android app that allows you to view the Current teams in the NBA ,
 as well as additional team information,such as The city its located in and the teams Alias.
 
+## Pre-requisites
+* Creating an account automatically signs you in.
+* You can logout ,and log back in with the same email and password credentials.
+* Remember your login details,as App functionality doesn't yet address remembering user info
+
+
 ## Important Technologies used
-* Parcelable implementation
-* Custom Fragment
-* Picasso for loading images
-* Web API service (Rapid API) https://rapidapi.com/marketplace
+* Firebase Authentication.
+* Shared Preferences.
+* Firebase saving  data.
+* Android's Menu layouts.
+* Androids Search widget.
+
+## Screenshots
+* User Authentication 
+
+* Firebase user account snapshot example.
+ 
 
 ## Known Bugs
 *
