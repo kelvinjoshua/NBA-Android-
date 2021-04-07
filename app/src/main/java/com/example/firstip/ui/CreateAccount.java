@@ -115,7 +115,6 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
     private void createAuthListener() {
         AuthListener = firebaseAuth ->  {
-
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
                 //start main activity on login if user exists in our database
                 if (user != null) {
@@ -124,8 +123,6 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                     startActivity(intent);
                     finish();
                 }
-
-
         };
     }
     //we need to actually attach our auth object to our listener,to make our main activity foregrounded/visible to us
