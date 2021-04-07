@@ -20,9 +20,13 @@ as well as additional team information,such as The city its located in and the t
 
 ## Screenshots
 * User Authentication 
-
-* Firebase user account snapshot example.
- 
+  
+  <img src="https://user-images.githubusercontent.com/60692205/113874141-24af9800-97be-11eb-8d14-b7ebe72233b2.jpg" width="300" height="500"> 
+  <img src="https://user-images.githubusercontent.com/60692205/113874167-2ed19680-97be-11eb-8d92-df1867cac160.jpg" width="300" height="500"> 
+  <img src="https://user-images.githubusercontent.com/60692205/113874154-29744c00-97be-11eb-8139-76bbcb99b5d9.jpg" width="300" height="500"> 
+  
+* Firebase Saved user account snapshot example.
+ <img src="https://user-images.githubusercontent.com/60692205/113876497-79eca900-97c0-11eb-8969-af7ccdaba465.jpg" width="770" height="500"> 
 
 ## Known Bugs
 *
