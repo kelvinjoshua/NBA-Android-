@@ -8,8 +8,7 @@ import retrofit2.http.Query;
 
 public interface RapidApi {
     //relative urls
-    ////.url("https://api-nba-v1.p.rapidapi.com/teams/confName/East")
-    @GET("https://api-nba-v1.p.rapidapi.com/teams/confName/East")
+    @GET("teams/confName/East")
     //call object to perfom http request
     Call<NbaSearchResponse> getTeams(
             );

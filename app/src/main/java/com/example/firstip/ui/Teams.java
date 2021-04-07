@@ -35,37 +35,37 @@ public class Teams extends AppCompatActivity {
     @BindView(R.id.progressBar) ProgressBar progressBar;
     public List<Team> eastTeams;
     private Adapter teamAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teams);
+
         ButterKnife.bind(this);
         Intent intent = getIntent();
         String confname = intent.getStringExtra("East");
-        //this instance will be a retrofit object to allow building and making requests
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
-        //our recycler needs a layout manager and an adapter
+
         //Get default shared preference here
+        //our recycler needs a layout manager and an adapter
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
         recycler.setLayoutManager(layoutManager);
         recycler.setHasFixedSize(true);
         recycler.setAdapter(teamAdapter);
         RapidApi client = RapidClient.getClient();
-        //Response<NbaSearchResponse> response = client.newCall(request).execute();
-        Call<NbaSearchResponse> call = client.getTeams();
-        //processing request
 
+        //this instance will be a retrofit object to allow building and making requests
+        Call<NbaSearchResponse> call = client.getTeams();
+
+        //processing request
         call.enqueue(new Callback<NbaSearchResponse>() {
             @Override
             public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
-                //response = okHttpClient.newCall(request).execute();
                 //hideProgressBar();
-                //Response response = client.newCall(request).execute();
                 if(response.isSuccessful()){
                    // assert response.body() != null;
                     eastTeams = response.body().getTeams();
                     teamAdapter = new Adapter(Teams.this, eastTeams);
                     //instantiate an adapter and associate it to our recycler view
-                    //teamAdapter = new Adapter(Teams.this, eastTeams);
                     teamAdapter.notifyDataSetChanged();
                     //create layout manager for respective recycler view
                    showTeams();
@@ -74,7 +74,6 @@ public class Teams extends AppCompatActivity {
                 else{
                     showUnsuccessfulMessage();
                 }
-
                  */
             }
 
@@ -84,33 +83,6 @@ public class Teams extends AppCompatActivity {
                 //showFailureMessage();
             }
         });
-        /*Custom adapter*/
-
-        //attach adapter to list view
-            /*
-        last.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //start another activity
-                Intent intent = new Intent(Teams.this,last.class);
-                //String conferenceName = eastern.getText().toString();
-                //intent.putExtra("EasternConf",conferenceName); //key-value
-                startActivity(intent);
-            }
-        });
-       // mlist.setAdapter(adapter);
-       /* mlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Teams.this,"Clinched Playoff position",Toast.LENGTH_LONG).show();
-            }
-        });
-
-        */
-           
-
-        //we get text and set it to the display value//
-        //showText.setText("Here are the Standings for " + " " + Retrieved + " "+"Western-Conference");
     }
 
     //Toggling visibility and providing feedback

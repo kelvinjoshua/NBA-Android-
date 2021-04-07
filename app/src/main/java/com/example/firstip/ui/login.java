@@ -46,7 +46,6 @@ public class login extends AppCompatActivity  implements View.OnClickListener {
         //createAuthListener();
         Auth = FirebaseAuth.getInstance();
 
-
         AuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -59,7 +58,6 @@ public class login extends AppCompatActivity  implements View.OnClickListener {
                 }
             }
         };
-
     }
 
 

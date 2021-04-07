@@ -27,9 +27,6 @@ public class RapidClient {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request newRequest  = chain.request().newBuilder()
-                            //.addInterceptor(logging)
-                            //.url("https://api-nba-v1.p.rapidapi.com/teams/confName/East")
-                            //get()
                             .addHeader("x-rapidapi-key", "9459dc53cbmsh04768043878e318p1a90f3jsn027f304452b8")
                             //.addHeader("x-rapidapi-key", RAPID_NBA_KEY)
                             .addHeader("x-rapidapi-host", "api-nba-v1.p.rapidapi.com")

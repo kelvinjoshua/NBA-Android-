@@ -109,9 +109,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(CreateAccount.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
-
 
     private void createAuthListener() {
         AuthListener = firebaseAuth ->  {

@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
         //preferences
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, Teams.class);
             String eConference = mTeamEdit.getText().toString();
 
-            //FIIRE BASE
+            //FIRE BASE
             saveLocationToFirebase(eConference);
 
             //SHARED PREFERENCE
@@ -112,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
-
     }
 
     //Reference fb.getInstance().getRef().child("key").push().setValue(value)

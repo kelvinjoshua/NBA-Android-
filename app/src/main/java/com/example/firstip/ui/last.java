@@ -21,8 +21,7 @@ public class last extends AppCompatActivity {
     @BindView(R.id.intentTextView) TextView lastView;
     @BindView(R.id.listView) ListView lastListView;
 
-    private  String[] teams = new String []{"76ers","bucks","Nets","Hornets","Knicks","Hawks",
-            "Heat","Celtics","Pacers","Cavaliers"};
+    private  String[] teams = new String []{"76ers","bucks","Nets","Hornets","Knicks","Hawks","Heat","Celtics","Pacers","Cavaliers"};
     private String [] Seed = new String[]{"32-13","29-14","30-15","22-21","23-22","22-22","22-23","21-23","19-24","17-27"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
