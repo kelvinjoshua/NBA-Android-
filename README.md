@@ -25,8 +25,15 @@ as well as additional team information,such as The city its located in and the t
   <img src="https://user-images.githubusercontent.com/60692205/113874167-2ed19680-97be-11eb-8d92-df1867cac160.jpg" width="300" height="500"> 
   <img src="https://user-images.githubusercontent.com/60692205/113874154-29744c00-97be-11eb-8139-76bbcb99b5d9.jpg" width="300" height="500"> 
   
-* Firebase Saved user account snapshot example.
+  
+* Teams from API,individual team wth additional data respectively.
+
+  <img src="https://user-images.githubusercontent.com/60692205/114330689-e82bc580-9b4a-11eb-80ab-d22acef93928.jpg" width="300" height="500">
+  <img src="https://user-images.githubusercontent.com/60692205/114330692-e9f58900-9b4a-11eb-9ff1-2d155203e2bd.jpg" width="300" height="500"> 
+  
+* Firebase Saved user account and saved team snapshots respectively.
  <img src="https://user-images.githubusercontent.com/60692205/113876497-79eca900-97c0-11eb-8969-af7ccdaba465.jpg" width="770" height="500"> 
+ <img src="https://user-images.githubusercontent.com/60692205/114392232-28b62e00-9ba1-11eb-86b2-78043e4e7be3.jpg" width="770" height="500">
 
 
 ## Licensing
