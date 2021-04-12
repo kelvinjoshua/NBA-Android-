@@ -1,19 +1,30 @@
 
 package com.example.firstip.models;
 
-//import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-//@Generated("jsonschema2pojo")
 @Parcel
 public class Team {
 
     @SerializedName("city")
     @Expose
     private String city;
+    @SerializedName("logo")
+    @Expose
+    private String logo;
+    @SerializedName("fullName")
+    @Expose
+    private String fullName;
+    @Expose
+    private String nickname;
+
+    @SerializedName("shortName")
+    @Expose
+    private String shortName;
+    /*
     @SerializedName("fullName")
     @Expose
     private String fullName;
@@ -23,9 +34,7 @@ public class Team {
     @SerializedName("nickname")
     @Expose
     private String nickname;
-    @SerializedName("logo")
-    @Expose
-    private String logo;
+
     @SerializedName("shortName")
     @Expose
     private String shortName;
@@ -37,47 +46,31 @@ public class Team {
     private String nbaFranchise;
     @SerializedName("leagues")
     @Expose
+
+
     private Leagues leagues;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Team() {
-    }
-
-    /**
-     * 
-     * @param allStar
-     * @param city
-     * @param leagues
-     * @param teamId
-     * @param nbaFranchise
-     * @param nickname
-     * @param fullName
-     * @param logo
-     * @param shortName
-     */
-    public Team(String city, String fullName, String teamId, String nickname, String logo, String shortName, String allStar, String nbaFranchise, Leagues leagues) {
-        super();
-        this.city = city;
-        this.fullName = fullName;
-        this.teamId = teamId;
-        this.nickname = nickname;
-        this.logo = logo;
-        this.shortName = shortName;
-        this.allStar = allStar;
-        this.nbaFranchise = nbaFranchise;
-        this.leagues = leagues;
-    }
+        */
+    public Team(){}
 
     public String getCity() {
         return city;
     }
-
-    public void setCity(String city) {
-        this.city = city;
+    public String getLogo() {
+        return logo;
     }
+
+    public String getFullName() {
+        return fullName;
+    }
+    public String getNickname() {
+        return nickname;
+    }
+    public String getShortName() {
+        return shortName;
+    }
+/*
+
 
     public String getFullName() {
         return fullName;
@@ -142,5 +135,7 @@ public class Team {
     public void setLeagues(Leagues leagues) {
         this.leagues = leagues;
     }
+
+ */
 
 }

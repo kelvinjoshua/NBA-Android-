@@ -15,7 +15,7 @@ public class pagerAdapter extends FragmentPagerAdapter {
 
     public pagerAdapter(@NonNull FragmentManager fm, int behavior, List<Team> teams){
         super(fm,behavior);
-        mTeams = teams;
+        this.mTeams = teams;
 
     }
     @Override

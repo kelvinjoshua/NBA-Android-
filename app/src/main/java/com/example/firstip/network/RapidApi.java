@@ -4,14 +4,16 @@ import com.example.firstip.models.NbaSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface RapidApi {
     //relative urls
-    @GET("teams/confName/East")
+    //the relative url for the endpoint  HTTP/1.1
+    @GET("teams/confName/West")
     //call object to perfom http request
-    Call<NbaSearchResponse> getTeams(
-            );
+
+    //client perfoming the request
+    Call<NbaSearchResponse> getApi(
+    );
     //models west
     // Call<NbaSearchResponse>
 

@@ -7,68 +7,71 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
       >
-
-
-        -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:background="@color/darkblue"
             android:paddingLeft="10dp"
             android:paddingTop="20dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp">
 
             <ImageView
-                android:id="@+id/restaurantImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/logo"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="110dp"
+                android:layout_centerHorizontal="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/basket" />
-            <!--
+
             <TextView
                 android:id="@+id/locationName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="false"
-                android:layout_alignParentLeft="false"
-                android:layout_marginStart="136dp"
+                android:layout_above="@+id/cityView"
+                android:layout_alignBottom="@id/logo"
+                android:layout_marginStart="220dp"
                 android:layout_marginLeft="12dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="-41dp"
                 android:text="Location"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" /> -->
+                android:textStyle="bold" />
 
             <!-- refactor hardcoded texts-->
-            <!--
             <TextView
                 android:id="@+id/alias"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/locationName"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="22dp"
+                android:layout_height="23dp"
+                android:layout_above="@+id/basketPng"
+                android:layout_alignBottom="@id/logo"
+                android:layout_marginBottom="-35dp"
                 android:layout_marginLeft="22dp"
-                android:layout_marginTop="137dp"
+                android:layout_centerVertical="true"
                 android:text="Nickname"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
                 -->
+
             <TextView
                 android:id="@+id/cityView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
                 android:layout_marginBottom="10dp"
-                android:layout_centerInParent="true"
+                android:layout_centerInParent="false"
+                android:layout_marginTop="40dp"
                 android:drawableLeft="@drawable/location_city"
-                android:layout_below="@+id/basketPng"
+                android:layout_marginLeft="220dp"
                 android:drawablePadding="4dp"
                 android:gravity="center"
                 android:text=""
@@ -84,50 +87,29 @@
                 android:layout_alignParentBottom="false"
                 android:layout_centerInParent="false"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
+                android:layout_below="@+id/logo"
+                android:layout_marginLeft="35dp"
                 android:layout_marginBottom="350dp"
                 android:drawableLeft="@drawable/basketball"
                 android:drawablePadding="4dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center_vertical"
                 android:text=""
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-                <!-- android:layout_above="@+id/saveRestaurantButton"-->
-                <!--
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View on Yelp"
-                    android:id="@+id/websiteTextView"
-                    android:drawableLeft="@drawable/ic_baseline_exit_to_app_white_18dp"
-                    android:drawablePadding="4dp"
-                    android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center" />
-                    -->
-
-
-            <!--
             <Button
-                android:layout_width="match_parent"
+                android:id="@+id/saveTeam"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
-                android:id="@+id/saveRestaurantButton"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorAccent"
-                android:textColor="@color/colorTextIcons"
-                android:textSize="15sp" />
-                -->
+                android:layout_marginTop="425dp"
+                android:backgroundTint="@color/black"
+                android:layout_centerHorizontal="true"
+                android:text="SAVE TEAM"
+                android:textSize="20dp"
+                android:layout_marginLeft="115dp"/>
         </RelativeLayout>
+
     </LinearLayout>
 
 </FrameLayout>

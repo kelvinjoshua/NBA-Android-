@@ -1,13 +1,11 @@
 
 package com.example.firstip.models;
 
-//import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-//@Generated("jsonschema2pojo")
 @Parcel
 public class Standard {
 
@@ -18,24 +16,7 @@ public class Standard {
     @Expose
     private String divName;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Standard() {
-    }
-
-    /**
-     * 
-     * @param confName
-     * @param divName
-     */
-    public Standard(String confName, String divName) {
-        super();
-        this.confName = confName;
-        this.divName = divName;
-    }
-
+    public Standard(){}
     public String getConfName() {
         return confName;
     }
