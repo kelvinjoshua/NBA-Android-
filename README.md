@@ -28,8 +28,6 @@ as well as additional team information,such as The city its located in and the t
 * Firebase Saved user account snapshot example.
  <img src="https://user-images.githubusercontent.com/60692205/113876497-79eca900-97c0-11eb-8969-af7ccdaba465.jpg" width="770" height="500"> 
 
-## Known Bugs
-*
 
 ## Licensing
 copyright (c) 2021 kelvinjoshua
