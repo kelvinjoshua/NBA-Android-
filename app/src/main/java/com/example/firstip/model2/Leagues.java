@@ -1,33 +1,19 @@
 
-package com.example.firstip.models;
+package com.example.firstip.model2;
 
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
 
+@Parcel
 public class Leagues {
 
     @SerializedName("standard")
     @Expose
     private Standard standard;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Leagues() {
-    }
-
-    /**
-     * 
-     * @param standard
-     */
-    public Leagues(Standard standard) {
-        super();
-        this.standard = standard;
-    }
-
+    public Leagues(){}
     public Standard getStandard() {
         return standard;
     }

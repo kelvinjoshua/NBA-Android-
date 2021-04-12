@@ -20,21 +20,15 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="-4dp"
-        android:layout_marginRight="-4dp"
-        android:visibility="visible" />
-
-
+        android:layout_marginEnd="-4dp" />
     <TextView
         android:layout_width="wrap_content"
+        android:layout_below="@+id/recyclerView"
+        android:text="WESTERN CONFERENCE TEAMS"
+        android:textColor="@color/darkblue"
         android:layout_height="wrap_content"
-        android:id="@+id/intentTextView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:visibility="visible"/>
+        android:layout_centerHorizontal="true"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -43,23 +37,32 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="invisible"/>
-
-    <TextView
+    <!-- <TextView
         android:id="@+id/errorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="16dp"
-        android:visibility="visible" />
+        android:visibility="visible"
+          <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/intentTextView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"/>
+/>
+-->
 
+    <!--
     <Button
         android:id="@+id/westButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/darkblue"
-        android:text="Eastern-Conference"
+        android:text="@string/eastern_conference"
         android:textColor="@color/white" />
 
     <EditText
@@ -70,10 +73,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:hint=" WEST"
+        android:hint="@string/west"
         android:inputType="text"
-        android:visibility="visible" />
-
+        android:visibility="visible"
+        android:autofillHints="" />
+    -->
 </RelativeLayout>
 
 

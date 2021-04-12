@@ -1,10 +1,12 @@
 
-package com.example.firstip.models;
+package com.example.firstip.model2;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
 
+@Parcel
 public class Team {
 
     @SerializedName("city")
@@ -13,60 +15,36 @@ public class Team {
     @SerializedName("fullName")
     @Expose
     private String fullName;
-    @SerializedName("teamId")
-    @Expose
-    private String teamId;
-    @SerializedName("nickname")
-    @Expose
-    private String nickname;
     @SerializedName("logo")
     @Expose
     private String logo;
+    @SerializedName("nickname")
+    @Expose
+    private String nickname;
+    @SerializedName("shortName")
+    @Expose
+    private String shortName;
+    /*
+    @SerializedName("teamId")
+    @Expose
+    private Integer teamId;
+    @SerializedName("nickname")
+    @Expose
+    private String nickname;
     @SerializedName("shortName")
     @Expose
     private String shortName;
     @SerializedName("allStar")
     @Expose
-    private String allStar;
+    private Integer allStar;
     @SerializedName("nbaFranchise")
     @Expose
-    private String nbaFranchise;
+    private Integer nbaFranchise;
     @SerializedName("leagues")
     @Expose
     private Leagues leagues;
-
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Team() {
-    }
-
-    /**
-     * 
-     * @param allStar
-     * @param city
-     * @param leagues
-     * @param teamId
-     * @param nbaFranchise
-     * @param nickname
-     * @param fullName
-     * @param logo
-     * @param shortName
-     */
-    public Team(String city, String fullName, String teamId, String nickname, String logo, String shortName, String allStar, String nbaFranchise, Leagues leagues) {
-        super();
-        this.city = city;
-        this.fullName = fullName;
-        this.teamId = teamId;
-        this.nickname = nickname;
-        this.logo = logo;
-        this.shortName = shortName;
-        this.allStar = allStar;
-        this.nbaFranchise = nbaFranchise;
-        this.leagues = leagues;
-    }
-
+       */
+    public Team(){}
     public String getCity() {
         return city;
     }
@@ -83,11 +61,23 @@ public class Team {
         this.fullName = fullName;
     }
 
-    public String getTeamId() {
+    public String getLogo() {
+        return logo;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+        /*
+    public Integer getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(String teamId) {
+    public void setTeamId(Integer teamId) {
         this.teamId = teamId;
     }
 
@@ -115,19 +105,19 @@ public class Team {
         this.shortName = shortName;
     }
 
-    public String getAllStar() {
+    public Integer getAllStar() {
         return allStar;
     }
 
-    public void setAllStar(String allStar) {
+    public void setAllStar(Integer allStar) {
         this.allStar = allStar;
     }
 
-    public String getNbaFranchise() {
+    public Integer getNbaFranchise() {
         return nbaFranchise;
     }
 
-    public void setNbaFranchise(String nbaFranchise) {
+    public void setNbaFranchise(Integer nbaFranchise) {
         this.nbaFranchise = nbaFranchise;
     }
 
@@ -138,5 +128,5 @@ public class Team {
     public void setLeagues(Leagues leagues) {
         this.leagues = leagues;
     }
-
+*/
 }

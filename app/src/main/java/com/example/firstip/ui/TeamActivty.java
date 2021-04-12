@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import com.example.firstip.R;
 import com.example.firstip.adapters.pagerAdapter;
-import com.example.firstip.models.Team;
+import com.example.firstip.model2.Team;
 
 import org.parceler.Parcels;
 

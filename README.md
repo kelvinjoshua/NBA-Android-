@@ -2,17 +2,26 @@
 Kelvin Joshua Bale
 
 ## Description.
-This is an android app that allows you to view the Current teams in the NBA ,
-as well as additional team information,such as The city its located in and the teams Alias.
+This is an android app that allows you to view the Current teams in the NBA WESTERN CONFERENNCE ,
+as well as additional team information,such as The city its located in and the teams Alias ,displayed in the custom fragments.
 
-## Important Technologies used
-* Parcelable implementation
-* Custom Fragment
-* Picasso for loading images
-* Web API service (Rapid API) https://rapidapi.com/marketplace
+## Important Technologies used.
+* Parcelable library.
+* Custom Fragment.
+* Picasso.
+* Web API service.
 
-## Known Bugs
-*
+## Setup
+* Download the Zip file in these in repository link.
+* Extract to desired location and open project in Android Studio.
+* Mount USB cable,to connect phone and laptop(Ensure debugging mode is active).
+* Run app,pop up gradle invocation of zero errors.
+* App is launched and ready for use.
+## Pre-requistes
+* It is advisable to run the app on a physical device(Smartphone),opposed to Emulator provided by the IDE AVD manager.
+* This is for optimal performance and good user experience.
+
+## Screen-shots
 
 ## Licensing
 copyright (c) 2021 kelvinjoshua

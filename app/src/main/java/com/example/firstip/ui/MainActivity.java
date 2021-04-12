@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
     //public static final String TAG = MainActivity.class.getSimpleName();
     @BindView(R.id.findTeamButton) Button mTeamBut;
 
-    @BindView(R.id.editTextTextPersonName) EditText mTeamEdit;
+   // @BindView(R.id.editTextTextPersonName) EditText mTeamEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // mTeamBut = (Button) findViewById(R.id.findTeamButton);
+       mTeamBut = (Button) findViewById(R.id.findTeamButton);
       //  mTeamEdit = (EditText) findViewById(R.id.editTextTextPersonName);
         ButterKnife.bind(this);
         mTeamBut.setOnClickListener(new View.OnClickListener() {
@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //test whether a toast will appear on submit
                 Intent intent = new Intent(MainActivity.this, Teams.class);
-                String eConference = mTeamEdit.getText().toString();
+                //String eConference = mTeamEdit.getText().toString();
                // Log.d(TAG,teamName);
-                intent.putExtra("East", eConference);
+               // intent.putExtra("East", eConference);
                 startActivity(intent);
 
                 //Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();

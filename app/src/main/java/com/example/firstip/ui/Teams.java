@@ -15,9 +15,8 @@ import android.widget.TextView;
 
 import com.example.firstip.R;
 import com.example.firstip.adapters.Adapter;
-import com.example.firstip.models.Api;
-import com.example.firstip.models.NbaSearchResponse;
-import com.example.firstip.models.Team;
+import com.example.firstip.model2.NbaSearchResponse;
+import com.example.firstip.model2.Team;
 import com.example.firstip.network.RapidApi;
 import com.example.firstip.network.RapidClient;
 
@@ -30,15 +29,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Teams extends AppCompatActivity {
-    @BindView(R.id.errorTextView) TextView errorText;
+    //@BindView(R.id.errorTextView) TextView errorText;
     @BindView(R.id.recyclerView) RecyclerView recycler;
-    @BindView(R.id.westButton) Button West;
-    @BindView(R.id.editConferenceName) EditText western;
+    //@BindView(R.id.westButton) Button West;
+    //@BindView(R.id.editConferenceName) EditText western;
     @BindView(R.id.progressBar) ProgressBar progressBar;
     public List<Team> eastTeams;
     private Adapter teamAdapter;
     private static final String TAG = "Teams";
-    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +46,12 @@ public class Teams extends AppCompatActivity {
         Intent intent = getIntent();
         String confname = intent.getStringExtra("East");
         //this instance will be a retrofit object to allow building and making requests
+        //our recycler needs a layout manager and an adapter
+        //RecyclerView.LayoutManager
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Teams.this);//our layout with the recyclerview activity-teams
+        recycler.setLayoutManager(layoutManager);
+        recycler.setHasFixedSize(true);
 
         RapidApi client = RapidClient.getClient();
         //Response<NbaSearchResponse> response = client.newCall(request).execute();
@@ -56,33 +60,26 @@ public class Teams extends AppCompatActivity {
         call.enqueue(new Callback<NbaSearchResponse>() {
             @Override
             public void onResponse(Call<NbaSearchResponse> call, Response<NbaSearchResponse> response) {
-               // Log.d("error","error on response");
                 //response = okHttpClient.newCall(request).execute();
                 //hideProgressBar();
                 //Response response = client.newCall(request).execute();
                 if(response.isSuccessful()){
-                    //Log.d(TAG,response.body().getTeams().toString());
-                   // assert response.body() != null;
-                    assert response.body() != null;
+                    Log.d(TAG,response.body().getApi().getTeams().toString());
                     eastTeams =response.body().getApi().getTeams();
                    // Log.d("data",eastTeams.toString());
-                    //our recycler needs a layout manager and an adapter
-                    recycler.setLayoutManager(layoutManager);
-                    recycler.setHasFixedSize(true);
-                    recycler.setAdapter(teamAdapter);
-                    teamAdapter = new Adapter(Teams.this, eastTeams);
                     //instantiate an adapter and associate it to our recycler view
+                    teamAdapter = new Adapter(Teams.this, eastTeams);
 
-                   // teamAdapter.notifyDataSetChanged();
+                    teamAdapter.notifyDataSetChanged();
+                    recycler.setAdapter(teamAdapter);
                     //create layout manager for respective recycler view
-                   showTeams();
                 }
                 /*
                 else{
                     showUnsuccessfulMessage();
                 }
-
                  */
+               teamAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -122,6 +119,7 @@ public class Teams extends AppCompatActivity {
     }
 
     //Toggling visibility and providing feedback
+    /*
     private void showFailureMessage() {
         errorText.setText("Something went wrong. Please check your Internet connection and try again later");
         errorText.setVisibility(View.VISIBLE);
@@ -131,7 +129,7 @@ public class Teams extends AppCompatActivity {
         errorText.setText("Something went wrong. Please try again later");
         errorText.setVisibility(View.VISIBLE);
     }
-
+    */
     private void showTeams() {
         recycler.setVisibility(View.VISIBLE);
         //mLocationTextView.setVisibility(View.VISIBLE);

@@ -1,7 +1,9 @@
 package com.example.firstip.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +13,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firstip.R;
-import com.example.firstip.models.Team;
+import com.example.firstip.model2.Team;
 import com.example.firstip.ui.TeamActivty;
+import com.example.firstip.ui.Teams;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -24,27 +27,33 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 //adapter needs viewholder
-public class Adapter extends RecyclerView.Adapter<Adapter.teamViewHolder>{
+public class Adapter extends RecyclerView.Adapter<Adapter.TeamViewHolder>{
 //Adapter populates,view stores
     private Context mContext;
     private List<Team> mteams = new ArrayList();
 
     public Adapter(Context context,List<Team> teams){
-        context = mContext;
-        teams = mteams;
+        this.mContext = context;
+        this.mteams = teams;
     }
-
+    /*
     @Override
-    public teamViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public void onAttach(Activity activity){
+        this.activity = activity;
+    }
+        */
+    @Override
+    public TeamViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         //inflate layout return viewHolder
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_team_item, parent, false);
-        teamViewHolder viewHolder = new teamViewHolder(view);//hold /store our view
+        TeamViewHolder viewHolder = new TeamViewHolder(view);//hold /store our view
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder( teamViewHolder holder, int position) {
+    public void onBindViewHolder( final TeamViewHolder holder, final int position) {
         //create an instance of viewHolder to use its method, team in teams array
+        holder.setIsRecyclable(false);
         holder.bindTeam(mteams.get(position));
     }
 
@@ -53,13 +62,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.teamViewHolder>{
         return mteams.size();
     }
 
-    public class teamViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class TeamViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         //bind views specific to our individual team item
         @BindView(R.id.city) TextView City;
         @BindView(R.id.fullName) TextView teamName;
         @BindView(R.id.logo) ImageView logo;
+        //public Teams active;
         private Context mContext;
-        public teamViewHolder(View itemView){
+        public TeamViewHolder(View itemView){
             super(itemView);
             ButterKnife.bind(this,itemView);
             itemView.setOnClickListener((View.OnClickListener) this);
@@ -72,13 +82,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.teamViewHolder>{
             Picasso.get().load(team.getLogo()).into(logo);
         }
 
+
         @Override
         public void onClick(View v) {
             int itemPosition = getLayoutPosition();
-            Intent intent = new Intent(mContext, TeamActivty.class);
+            Intent intent = new Intent(v.getContext(), TeamActivty.class);
             intent.putExtra("position", itemPosition);
             intent.putExtra("Teams", Parcels.wrap(mteams));
-            mContext.startActivity(intent);
+            v.getContext().startActivity(intent);
+
+            // mContext.startActivity(intent);
+            //Log.d("Click","item clicked");
         }
     }
 
