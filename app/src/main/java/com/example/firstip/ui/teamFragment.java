@@ -70,7 +70,7 @@ private Team mteam;
             //add to database ,this child node ,unique identifier
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TEAM);
             reference.push().setValue(mteam);
-            Toast.makeText(getContext(),"Saved",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),"Saved" + " "+mteam.getFullName(),Toast.LENGTH_SHORT).show();
         }
     }
 }
