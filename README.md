@@ -2,13 +2,13 @@
 Kelvin Joshua Bale
 
 ## Description.
-This is an android app that allows you to view the Current teams in the NBA ,
-as well as additional team information,such as The city its located in and the teams Alias.
+This is an android app that allows you to view the Current teams in the NBA Western conference,
+as well as additional team information,such as The city its located in and the teams Alias displayed when user clicks on a specific team.
 
 ## Pre-requisites
 * Creating an account automatically signs you in.
 * You can logout ,and log back in with the same email and password credentials.
-* Remember your login details,as App functionality doesn't yet address remembering user info
+* Remember your login details,as App functionality doesn't yet address remembering user information.
 
 
 ## Important Technologies used
