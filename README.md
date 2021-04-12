@@ -3,7 +3,7 @@ Kelvin Joshua Bale
 
 ## Description.
 This is an android app that allows you to view the Current teams in the NBA WESTERN CONFERENNCE ,
-as well as additional team information,such as The city its located in and the teams Alias ,displayed in the custom fragments.
+as well as additional team information,such as The city its located in and the teams Alias ,displayed when a user clicks on a specific team.
 
 ## Important Technologies used.
 * Parcelable library.
@@ -12,17 +12,25 @@ as well as additional team information,such as The city its located in and the t
 * Web API service.
 
 ## Setup
-* Download the Zip file in these in repository link.
-* Extract to desired location and open project in Android Studio.
+* Download the Zip file on this repository.
+* Extract to desired location ,open project in Android Studio.
 * Mount USB cable,to connect phone and laptop(Ensure debugging mode is active).
 * Run app,pop up gradle invocation of zero errors.
 * App is launched and ready for use.
 ## Pre-requistes
-* It is advisable to run the app on a physical device(Smartphone),opposed to Emulator provided by the IDE AVD manager.
+* It is advisable to run the app on a physical device (User's Smartphone),as opposed to the  Emulator provided by the IDE AVD manager.
 * This is for optimal performance and good user experience.
 
 ## Screen-shots
-
+* Main page
+  
+  <img src="https://user-images.githubusercontent.com/60692205/114330696-ec57e300-9b4a-11eb-8789-b7153645edcb.jpg" width="350" height="700"> 
+  
+* Teams.
+ <img src="https://user-images.githubusercontent.com/60692205/114330689-e82bc580-9b4a-11eb-80ab-d22acef93928.jpg" width="350" height="700">
+ 
+* Additional info on a specific team.
+ <img src="https://user-images.githubusercontent.com/60692205/114330692-e9f58900-9b4a-11eb-9ff1-2d155203e2bd.jpg" width="350" height="700">
 ## Licensing
 copyright (c) 2021 kelvinjoshua
 
