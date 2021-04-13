@@ -27,9 +27,9 @@ import butterknife.ButterKnife;
 public class teamFragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.cityView) TextView cityIcon;
     @BindView(R.id.basketPng) TextView ballIcon;
-    @BindView(R.id.logo) ImageView logo;
+   // @BindView(R.id.logo) ImageView logo;
     @BindView(R.id.saveTeam) Button saveTeam;
-
+    public ImageView logo;
 private Team mteam;
 
     public teamFragment() {
@@ -50,12 +50,13 @@ private Team mteam;
         assert getArguments() != null;
          mteam= Parcels.unwrap(getArguments().getParcelable("TeamName"));
     }
-
+    //change signature to public image to be draggable?
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_team, container, false);
         ButterKnife.bind(this, view);
+        logo = (ImageView) view.findViewById(R.id.logo);
         cityIcon.setText(mteam.getCity());
         ballIcon.setText(mteam.getNickname());
         Picasso.get().load(mteam.getLogo()).into(logo);

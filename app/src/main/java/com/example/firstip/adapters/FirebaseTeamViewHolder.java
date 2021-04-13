@@ -29,10 +29,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FirebaseTeamViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class FirebaseTeamViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.city) TextView City;
     @BindView(R.id.fullName) TextView teamName;
     @BindView(R.id.logo) ImageView logo;
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
     View view;
     Context context;
 
@@ -41,7 +43,7 @@ public class FirebaseTeamViewHolder extends RecyclerView.ViewHolder implements V
         view = itemView;
         context = itemView.getContext();
         ButterKnife.bind(this,itemView);
-        itemView.setOnClickListener(this);
+        //itemView.setOnClickListener(this);
     }
     public void bindTeam(Team team){
 
@@ -49,6 +51,7 @@ public class FirebaseTeamViewHolder extends RecyclerView.ViewHolder implements V
         teamName.setText(team.getFullName());
         Picasso.get().load(team.getLogo()).into(logo);
     }
+    /*
     @Override
     public void onClick(View v) {
         final List<Team> savedTeams = new ArrayList<>();
@@ -75,4 +78,5 @@ public class FirebaseTeamViewHolder extends RecyclerView.ViewHolder implements V
         });
 
     }
+    */
 }

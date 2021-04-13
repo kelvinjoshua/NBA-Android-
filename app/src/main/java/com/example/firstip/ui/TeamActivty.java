@@ -22,6 +22,7 @@ public class TeamActivty extends AppCompatActivity {
     private pagerAdapter adapterViewPager;
     List<Team> mTeams;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -51,7 +51,24 @@ public class Team {
     private Leagues leagues;
 
         */
+    String index;
     public Team(){}
+
+    public Team(String city,String logo,String fullName,String shortName,String nickname){
+        this.city = city;
+        this.logo =logo;
+        this.fullName = fullName;
+        this.shortName = shortName;
+        this.nickname = nickname;
+        this.index = "not sepcified";
+    }
+    public String getIndex(){
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
+    }
 
     public String getCity() {
         return city;
