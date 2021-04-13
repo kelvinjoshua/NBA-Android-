@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //public static final String TAG = MainActivity.class.getSimpleName();
     @BindView(R.id.findTeamButton) Button mTeamBut;
     @BindView(R.id.editTextTextPersonName) EditText mTeamEdit;
+    @BindView(R.id.savedTeamButton)Button TeamSave;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private ValueEventListener textListener;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ButterKnife.bind(this);
         //mTeamBut.setOnClickListener(this);//setClick listener here
+        TeamSave.setOnClickListener(this);
         mTeamBut.setOnClickListener(this);
     }
     @Override
@@ -84,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("East", eConference);
             startActivity(intent);
             //Toast.makeText(MainActivity.this, "Retrieving team detail", Toast.LENGTH_SHORT).show();
+        }
+        if (v == TeamSave) {
+            Intent intent = new Intent(MainActivity.this, SavedTeamList.class);
+            startActivity(intent);
         }
     }
     //inflate menu layout

@@ -80,6 +80,16 @@
         android:layout_marginBottom="220dp"
         android:text="Find teams"
         android:textColor="@color/white" />
+    <Button
+        android:id="@+id/savedTeamButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/darkblue"
+        android:layout_marginBottom="180dp"
+        android:text="SAVED TEAMS"
+        android:textColor="@color/white" />
 
 
     <EditText
