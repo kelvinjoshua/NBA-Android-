@@ -48,7 +48,7 @@ public class SavedTeamList extends AppCompatActivity {
             @NonNull
             @Override
             public FirebaseTeamViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_team_item,parent,false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.team_item_drag,parent,false);
                 return new FirebaseTeamViewHolder(view);
             }
         };
