@@ -9,6 +9,7 @@ as well as additional team information,such as the city it's located in and the 
 * Swipe functionality,on saved teams to delete a specific saved team
 * You can now save a  team,and view it in the saved teams button
 * Delete a specific saved team by swiping right or left.
+* Drag and drop saved team.
 
 ## Pre-requisites
 * Creating an account automatically signs you in.
