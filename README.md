@@ -5,10 +5,16 @@ Kelvin Joshua Bale
 This is an android app that allows you to view the Current teams in the NBA Western conference,
 as well as additional team information,such as the city it's located in and the team's Alias, displayed when user clicks on a specific team.
 
+## New Specs
+* Swipe functionality,on saved teams to delete a specific saved team
+* You can now save a  team,and view it in the saved teams button
+* Delete a specific saved team by swiping right or left.
+
 ## Pre-requisites
 * Creating an account automatically signs you in.
 * The user can logout ,and log back in with the same email and password credentials.
 * Remember your login details, App functionality doesn't yet address remembering user information.
+
 
 
 ## Important Technologies used
@@ -16,25 +22,19 @@ as well as additional team information,such as the city it's located in and the 
 * Shared Preferences.
 * Firebase saving  data.
 * Android's Menu layouts.
+* Gesture functionality.
 
 ## Screenshots
-* User Authentication 
+* Saved teams
   
-  <img src="https://user-images.githubusercontent.com/60692205/113874141-24af9800-97be-11eb-8d14-b7ebe72233b2.jpg" width="300" height="500"> 
-  <img src="https://user-images.githubusercontent.com/60692205/113874167-2ed19680-97be-11eb-8d92-df1867cac160.jpg" width="300" height="500"> 
-  <img src="https://user-images.githubusercontent.com/60692205/113874154-29744c00-97be-11eb-8139-76bbcb99b5d9.jpg" width="300" height="500"> 
-  
-  
-* Teams from API,individual team wth additional data respectively.
+  <img src="https://user-images.githubusercontent.com/60692205/114698345-ae63e600-9d27-11eb-8ee1-6e3317356d2f.jpg" width="300" height="500"> 
+ 
+ 
+* Gesture and Swipe functionality.
 
-  <img src="https://user-images.githubusercontent.com/60692205/114330689-e82bc580-9b4a-11eb-80ab-d22acef93928.jpg" width="300" height="500">
-  <img src="https://user-images.githubusercontent.com/60692205/114330692-e9f58900-9b4a-11eb-9ff1-2d155203e2bd.jpg" width="300" height="500"> 
+  <img src="https://user-images.githubusercontent.com/60692205/114698352-b0c64000-9d27-11eb-8b69-e4b5358c0733.jpg" width="300" height="500">
   
-* Firebase Saved user account and saved team snapshots respectively.
- <img src="https://user-images.githubusercontent.com/60692205/113876497-79eca900-97c0-11eb-8969-af7ccdaba465.jpg" width="770" height="500"> 
- <img src="https://user-images.githubusercontent.com/60692205/114392232-28b62e00-9ba1-11eb-86b2-78043e4e7be3.jpg" width="770" height="500">
-
-
+  
 ## Licensing
 copyright (c) 2021 kelvinjoshua
 
